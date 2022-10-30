@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="20037" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="20006"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Ping_Pong_ScoreBoard_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="k2A-tJ-SSb">
+                            <items>
+                                <label width="0.5" alignment="left" text="Label" textAlignment="center" id="bwY-xK-XJs"/>
+                                <label width="0.5" alignment="left" text="Label" textAlignment="center" id="jrn-j4-YbQ"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="dnN-Wz-uUY">
+                            <items>
+                                <button width="0.5" alignment="left" title="0" id="Hdi-So-elW">
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="25"/>
+                                    <connections>
+                                        <action selector="redBtn" destination="AgC-eL-Hgc" id="3FK-az-xTf"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="0" id="96a-UP-RXZ">
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="25"/>
+                                    <connections>
+                                        <action selector="blueBtn" destination="AgC-eL-Hgc" id="yb5-k7-7WF"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Reset" id="tUC-xz-AEy">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="Reset" destination="AgC-eL-Hgc" id="gDV-V1-LsC"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="blueBtn_Outlet" destination="96a-UP-RXZ" id="a9E-tU-7ky"/>
+                        <outlet property="blueLabel" destination="jrn-j4-YbQ" id="SNb-L4-19Z"/>
+                        <outlet property="redBtn_Outlet" destination="Hdi-So-elW" id="Kje-8P-9RX"/>
+                        <outlet property="redLabel" destination="bwY-xK-XJs" id="FNK-Io-erC"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Ping_Pong_ScoreBoard_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="Ping_Pong_ScoreBoard_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+    </scenes>
+</document>
